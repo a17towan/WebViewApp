@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
     // Create a private member variable that can hold our WebView
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        WebView wv = (WebView) findViewById(R.id.my_webview);
+        setContentView(wv);
+        wv.loadUrl("https://scio.his.se");
 
         // The FAB-code can be removed
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
