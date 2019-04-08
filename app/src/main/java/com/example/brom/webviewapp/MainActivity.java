@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +24,14 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //Gör hemsidan klickbar
+
         WebView webView =  new WebView (this);
         setContentView(webView);
-        webView.loadUrl("https://wwwlab.iit.his.se/a17towan/Mobilapplikationsdesign/Projekt/projekt.html");
+        WebSettings websettings = webView.getSettings();
+        ((WebSettings) websettings).setJavaScriptEnabled(true);
+        //webView.loadUrl("https://wwwlab.iit.his.se/a17towan/Mobilapplikationsdesign/Projekt/projekt.html");
+        webView.loadUrl("file:///android_asset/About.html");
 
         // 1. Create a WebView element in the layout file content_main.xml
         // -- Commit and push to your github fork
