@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //Gör hemsidan klickbar
+        //Gör hemsidan klickbar och lägger till intern länk
 
         WebView webView =  new WebView (this);
         setContentView(webView);
