@@ -16,6 +16,9 @@ public class MainActivity extends AppCompatActivity {
 
     // Booyah!
 
+    //WebView webView =  new WebView (this);
+    private WebView webView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         /* This code is run when the App is created. Include code that creates your WebView */
@@ -26,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         //Gör hemsidan klickbar och lägger till intern länk
 
-        WebView webView =  new WebView (this);
-        setContentView(webView);
+        webView = findViewById(R.id.my_webview);
+        //setContentView(webView);
         WebSettings websettings = webView.getSettings();
         ((WebSettings) websettings).setJavaScriptEnabled(true);
         //webView.loadUrl("https://wwwlab.iit.his.se/a17towan/Mobilapplikationsdesign/Projekt/projekt.html");
@@ -68,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            webView.loadUrl("https://wwwlab.iit.his.se/a17towan/Mobilapplikationsdesign/Projekt/projekt.html");
+            return true;
+        }
+        else if(id == R.id.action_settings2){
+            webView.loadUrl("file:///android_asset/About.html");
             return true;
         }
 
